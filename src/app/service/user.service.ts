@@ -22,4 +22,7 @@ export class UserService{
     deleteUserById(id): Observable<any> {
         return this.http.delete(`${this.USER_CONTROL}/del/id/${id}`);
     }
+    getAllUserPaging(page, size): Observable<any> {
+        return this.http.get(`${this.USER_CONTROL}/page/${page}/size/${size}`);
+    }
 }

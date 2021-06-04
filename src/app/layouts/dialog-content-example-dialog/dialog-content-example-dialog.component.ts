@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {UserModel} from '../model/user.model';
-import {UserService} from '../service/user.service';
+import {UserModel} from '../../model/user.model';
+import {UserService} from '../../service/user.service';
 
 @Component({
     selector: 'app-dialog-content-example-dialog',

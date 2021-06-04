@@ -19,6 +19,13 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
+import {AdminDashboardComponent} from '../admin-dashboard/admin-dashboard.component';
+import {AdminDStatsComponent} from '../admin-dashboard/admin-d-stats/admin-d-stats.component';
+import {UserControllerComponent} from '../user-controller/user-controller.component';
+import {HotLinksComponent} from '../admin-dashboard/hot-links/hot-links.component';
+import {AdminDReportsComponent} from '../admin-dashboard/admin-d-reports/admin-d-reports.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
     imports: [
@@ -34,6 +41,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatTooltipModule,
         MatTableModule,
         MatDialogModule,
+        MatRadioModule,
+        MatPaginatorModule
     ],
     declarations: [
         DashboardComponent,
@@ -42,8 +51,19 @@ import {MatDialogModule} from '@angular/material/dialog';
         TypographyComponent,
         IconsComponent,
         MapsComponent,
+        UserControllerComponent,
         NotificationsComponent,
         UpgradeComponent,
+        AdminDashboardComponent,
+        AdminDStatsComponent,
+        HotLinksComponent,
+        AdminDReportsComponent
+    ],
+    exports: [
+        AdminDStatsComponent,
+        HotLinksComponent,
+        AdminDReportsComponent,
+        UserControllerComponent
     ]
 })
 
