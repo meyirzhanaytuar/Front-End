@@ -1,0 +1,51 @@
+<div class="card">
+    <div class="card-header card-header-danger">
+        <h4 class="card-title">Редактирование профиля</h4>
+        <p class="card-category"></p>
+    </div>
+    <div class="card-body">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Ид</mat-label>
+            <input matInput type="text" [(ngModel)]="data.model.id" disabled>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Имя</mat-label>
+            <input matInput type="text" [(ngModel)]="data.model.firstName">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Фамилия</mat-label>
+            <input matInput type="text" [(ngModel)]="data.model.lastName">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Телефон</mat-label>
+            <input matInput type="text" [(ngModel)]="data.model.phoneNumber">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Аддресс</mat-label>
+            <input matInput type="text" [(ngModel)]="data.model.address">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>День Рождение</mat-label>
+            <input matInput type="text" [(ngModel)]="data.model.birthdate">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>UserId</mat-label>
+            <input matInput type="text" [(ngModel)]="data.model.userid" [disabled]="data.action === 'edit'">
+        </mat-form-field>
+
+    </div>
+    <div class="card-footer">
+        <button mat-mat-raised-button (click)="teacherAction()" class="btn btn-primary" [mat-dialog-close]="true"
+                cdkFocusInitial>Сохранить
+        </button>
+        <button mat-mat-raised-button class="btn btn-danger pull-right" mat-dialog-close>Отмена</button>
+    </div>
+</div>
+

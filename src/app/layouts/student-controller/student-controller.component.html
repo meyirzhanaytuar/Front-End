@@ -1,0 +1,81 @@
+<div class="main-content">
+    <div class="card">
+        <div class="card-header card-header-danger">
+            <h3 class="card-title">Students</h3>
+            <p class="card-category">students</p>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <button mat-icon-button (click)="openDialog3(null, 'add')" [matTooltip]="'Adding student'">
+                    <i class="material-icons">person_add_alt_1</i>
+                </button>
+                <div class="table-responsive">
+                    <table mat-table [dataSource]="dataSource" class="table">
+                        <!--- Note that these columns can be defined in any order.
+                              The actual rendered columns are set as a property on the row definition" -->
+                        <!-- ID Column -->
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef class="text-primary"> ID </th>
+                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                        </ng-container>
+                        <!-- First name Column -->
+                        <ng-container matColumnDef="firstName">
+                            <th mat-header-cell *matHeaderCellDef class="text-primary"> FIRST NAME </th>
+                            <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+                        </ng-container>
+                        <!-- PhoneNumber Column -->
+                        <ng-container matColumnDef="phoneNumber">
+                            <th mat-header-cell *matHeaderCellDef class="text-primary"> PHONE NUMBER </th>
+                            <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+                        </ng-container>
+                        <!-- Adress Column -->
+                        <ng-container matColumnDef="address">
+                            <th mat-header-cell *matHeaderCellDef class="text-primary"> ADDRESS </th>
+                            <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+                        </ng-container>
+                        <!-- Adress Column -->
+                        <ng-container matColumnDef="birthdate">
+                            <th mat-header-cell *matHeaderCellDef class="text-primary"> BIRTHDATE </th>
+                            <td mat-cell *matCellDef="let element"> {{element.birthdate}} </td>
+                        </ng-container>
+                        <!-- User component -->
+                        <ng-container matColumnDef="userid">
+                            <th mat-header-cell *matHeaderCellDef class="text-primary"> USER NAME </th>
+                            <td mat-cell *matCellDef="let element"> {{element.studentrole.login}} </td>
+                        </ng-container>
+                        <!-- Group name Column -->
+                        <ng-container matColumnDef="sgroupid">
+                            <th mat-header-cell *matHeaderCellDef class="text-primary"> GROUP NAME </th>
+                            <td mat-cell *matCellDef="let element"> {{element.studentgroup.group_name}} </td>
+                        </ng-container>
+
+                        <!-- Button -->
+                        <ng-container matColumnDef="actions">
+                            <th mat-header-cell *matHeaderCellDef class="text-primary"> ACTIONS </th>
+                            <td mat-cell *matCellDef="let element">
+                                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon"
+                                        matTooltip="Редактировать"  (click)="openDialog3(element, 'edit')">
+                                    <i class="material-icons">edit</i>
+                                </button>
+                                <button mat-icon-button color="primary"
+                                        aria-label="Example icon button with a home icon"
+                                        matTooltip="Удалить" (click)="deleteStudent(element.id)">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                            </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    <mat-paginator  #paginator
+                                    [length]="length"
+                                    [pageIndex]="page"
+                                    [pageSize]="size"
+                                    [pageSizeOptions]="[5, 10, 25, 100]"
+                                    (page)="pageEvent = getServerData($event)"
+                    ></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -21,4 +21,7 @@ export class StudentService {
     deleteStudentById(id): Observable<any> {
         return this.http.delete(`${this.STUDENT_CONTROL}/del/id/${id}`);
     }
+    getAllStudentPaging(page, size): Observable<any> {
+        return this.http.get(`${this.STUDENT_CONTROL}/page/${page}/size/${size}`);
+    }
 }

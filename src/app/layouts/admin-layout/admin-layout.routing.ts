@@ -11,6 +11,7 @@ import {UpgradeComponent} from '../../upgrade/upgrade.component';
 import {UserControllerComponent} from '../user-controller/user-controller.component';
 import {AdminDashboardComponent} from '../admin-dashboard/admin-dashboard.component';
 import {TeacherControllerComponent} from '../teacher-controller/teacher-controller.component';
+import {StudentControllerComponent} from '../student-controller/student-controller.component';
 
 export const AdminLayoutRoutes: Routes = [
     {path: 'dashboard', component: DashboardComponent},
@@ -23,5 +24,6 @@ export const AdminLayoutRoutes: Routes = [
     {path: 'upgrade', component: UpgradeComponent},
     {path: 'users', component: UserControllerComponent},
     {path: 'admin-dashboard', component: AdminDashboardComponent},
-    {path: 'teachers', component: TeacherControllerComponent}
+    {path: 'teachers', component: TeacherControllerComponent},
+    {path: 'students', component: StudentControllerComponent}
 ];

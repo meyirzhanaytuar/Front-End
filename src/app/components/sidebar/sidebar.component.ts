@@ -18,6 +18,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
     { path: '/users', title: 'Users',  icon:'group', class: '' },
     { path: '/teachers', title: 'Teachers',  icon:'group', class: '' },
+    { path: '/students', title: 'Students',  icon:'group', class: '' }
 ];
 
 @Component({
