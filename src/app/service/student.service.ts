@@ -19,7 +19,7 @@ export class StudentService {
         return this.http.post(`${this.STUDENT_CONTROL}`, studentModel);
     }
     deleteStudentById(id): Observable<any> {
-        return this.http.delete(`${this.STUDENT_CONTROL}/del/id/${id}`);
+        return this.http.delete(`${this.STUDENT_CONTROL}/id/${id}`);
     }
     getAllStudentPaging(page, size): Observable<any> {
         return this.http.get(`${this.STUDENT_CONTROL}/page/${page}/size/${size}`);

@@ -1,0 +1,17 @@
+<div class="row">
+    <mat-radio-group layout="row" [(ngModel)]="selectedGroup">
+        <mat-radio-button [value]=1 class="md-primary">Users</mat-radio-button>
+
+        <mat-radio-button [value]=2> Teachers</mat-radio-button>
+        <mat-radio-button [value]=3> Subjects</mat-radio-button>
+    </mat-radio-group>
+</div>
+<div class="row">
+    <button mat-button class="btn btn-primary"
+            matTooltip="Generate report" (click)="generateReport()">
+      Generate
+    </button>
+</div>
+<div class="row">
+    <app-users *ngIf="selectedGroup===1"></app-users>
+</div>

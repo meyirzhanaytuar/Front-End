@@ -21,15 +21,15 @@ export class DialogContentExampleDialogStudentComponent implements OnInit {
   ngOnInit(): void {
   }
   studentAction() {
-    const dataForService2 = new StudentModel();
-    dataForService2.id = this.data.model.id;
-    dataForService2.firstName = this.data.model.firstName;
-    dataForService2.sgroupid = this.data.model.sgroupid;
-    dataForService2.phoneNumber = this.data.model.phoneNumber;
-    dataForService2.address = this.data.model.address;
-    dataForService2.birthdate = this.data.model.birthdate;
-    dataForService2.userid = this.data.model.userid;
-    this.studentService.createStudent(dataForService2).subscribe(res => {
+    const dataForService3 = new StudentModel();
+    dataForService3.id = this.data.model.id;
+    dataForService3.firstName = this.data.model.firstName;
+    dataForService3.sgroupid = this.data.model.sgroupid;
+    dataForService3.phoneNumber = this.data.model.phoneNumber;
+    dataForService3.address = this.data.model.address;
+    dataForService3.birthdate = this.data.model.birthdate;
+    dataForService3.userid = this.data.model.userid;
+    this.studentService.createStudent(dataForService3).subscribe(res => {
       console.log(res);
     });
   }
